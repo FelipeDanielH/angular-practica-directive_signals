@@ -10,14 +10,14 @@
     <button (click)="loadUser(userId() + 1)" class="btn btn-primary">Siguiente</button>
   </div>
 
-  <div class="col-8">
+  <div class="col-8" *ngIf="userWasFound()">
     <h3>Usuario: </h3>
     <p>Correo: {{ currentUser()?.email}} </p>
-    <p>Nombre: {{ currentUser()?.first_name }} {{ currentUser()?.last_name}}</p>
+    <p>Nombre: {{ fullName() }}</p>
     <img [src]="currentUser()?.avatar" alt="Avatar" class="rounded">
   </div>
 
-  <div class="col-8 text-danger">
+  <div class="col-8 text-danger" *ngIf="!userWasFound()">
     <h3>Usuario no encontrado</h3>
   </div>
 </div>
