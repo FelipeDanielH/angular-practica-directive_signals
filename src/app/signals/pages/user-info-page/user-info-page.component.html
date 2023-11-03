@@ -4,17 +4,17 @@
 <div class="row">
 
   <div class="col-4">
-    <h3>Usuario actual: </h3>
-    <button class="btn btn-primary">Anterior</button>
+    <h3>Usuario actual: {{ userId() }}</h3>
+    <button (click)="loadUser(userId() - 1 )" class="btn btn-primary">Anterior</button>
     &nbsp;
-    <button class="btn btn-primary">Siguiente</button>
+    <button (click)="loadUser(userId() + 1)" class="btn btn-primary">Siguiente</button>
   </div>
 
   <div class="col-8">
     <h3>Usuario: </h3>
-    <p>Correo: </p>
-    <p>Nombre: </p>
-    <img src="..." alt="Avatar">
+    <p>Correo: {{ currentUser()?.email}} </p>
+    <p>Nombre: {{ currentUser()?.first_name }} {{ currentUser()?.last_name}}</p>
+    <img [src]="currentUser()?.avatar" alt="Avatar" class="rounded">
   </div>
 
   <div class="col-8 text-danger">
