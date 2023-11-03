@@ -3,19 +3,15 @@
 
 <form [formGroup]="myForm">
   <div class="row align-items-center mb-3">
-
     <div class="col-auto">
       <label for="">Nombre:</label>
     </div>
-
     <div class="col-auto">
       <input formControlName="name" type="text" class="form-control">
     </div>
-
     <div class="col-auto">
-      <span>Algo de informacion</span>
+      <span customLabel [color]="color">Temporal</span>
     </div>
-
   </div>
 
   <div class="row">
